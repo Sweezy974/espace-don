@@ -21,20 +21,20 @@ class __TwigTemplate_543a6331adece837b3d1159c30c8c41a512e1d05ad3129308c6dd63bd97
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1fb95781ed6e73fc53a2ed64f8e1cb572235fc09ffee6881fe85da8e1e6368c3 = $this->env->getExtension("native_profiler");
-        $__internal_1fb95781ed6e73fc53a2ed64f8e1cb572235fc09ffee6881fe85da8e1e6368c3->enter($__internal_1fb95781ed6e73fc53a2ed64f8e1cb572235fc09ffee6881fe85da8e1e6368c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_d515c32757e364f0dfe17570535b6888b831f9bb8c606b692359e791487282b3 = $this->env->getExtension("native_profiler");
+        $__internal_d515c32757e364f0dfe17570535b6888b831f9bb8c606b692359e791487282b3->enter($__internal_d515c32757e364f0dfe17570535b6888b831f9bb8c606b692359e791487282b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1fb95781ed6e73fc53a2ed64f8e1cb572235fc09ffee6881fe85da8e1e6368c3->leave($__internal_1fb95781ed6e73fc53a2ed64f8e1cb572235fc09ffee6881fe85da8e1e6368c3_prof);
+        $__internal_d515c32757e364f0dfe17570535b6888b831f9bb8c606b692359e791487282b3->leave($__internal_d515c32757e364f0dfe17570535b6888b831f9bb8c606b692359e791487282b3_prof);
 
     }
 
     // line 4
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_1e7baea0d90fc4e93e3e8a63eacab50cc96250f089909f93cc85589b23befdaa = $this->env->getExtension("native_profiler");
-        $__internal_1e7baea0d90fc4e93e3e8a63eacab50cc96250f089909f93cc85589b23befdaa->enter($__internal_1e7baea0d90fc4e93e3e8a63eacab50cc96250f089909f93cc85589b23befdaa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_ea8e0de5191b2baada84ec4a2acabe3b03b7a7b6121aad6183f593b02fe2a703 = $this->env->getExtension("native_profiler");
+        $__internal_ea8e0de5191b2baada84ec4a2acabe3b03b7a7b6121aad6183f593b02fe2a703->enter($__internal_ea8e0de5191b2baada84ec4a2acabe3b03b7a7b6121aad6183f593b02fe2a703_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 5
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -72,7 +72,8 @@ class __TwigTemplate_543a6331adece837b3d1159c30c8c41a512e1d05ad3129308c6dd63bd97
 }
 .wrapper h3{
     font-weight: bold;
-    font-family: \"arial black\",;
+    font-family: \"arial black\";
+    color:#337ab7;
 }
 html body form .btn-primary{
     background-color: red;
@@ -105,39 +106,45 @@ html body form .btn-primary:hover{
 <div class=\"wrapper\">
 <h3 class=\"text-center\">Connexion</h3>
 <form action=\"";
-        // line 67
+        // line 68
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-    <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 68
+<div class=\"form-group\">
+    <input class=\"form-control\" type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 70
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
-
+    <div class=\"form-group\">
     <label for=\"username\">";
-        // line 70
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 71
+    <input class=\"form-control\" type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 73
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
         echo "\" required=\"required\" />
-
+    </div>
+    <div class=\"form-group\">
     <label for=\"password\">";
-        // line 73
+        // line 76
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
-
+    <input class=\"form-control\" type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+    </div>
+    <div class=\"form-group\">
     <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
     <label for=\"remember_me\">";
-        // line 77
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 79
+    </div>
+    <div class=\"form-group\">
+    <input class=\"btn btn-primary\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+        // line 84
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
+    </div>
+    </div>
 </form>
 </div>
 </div>
@@ -147,7 +154,7 @@ html body form .btn-primary:hover{
 
 ";
         
-        $__internal_1e7baea0d90fc4e93e3e8a63eacab50cc96250f089909f93cc85589b23befdaa->leave($__internal_1e7baea0d90fc4e93e3e8a63eacab50cc96250f089909f93cc85589b23befdaa_prof);
+        $__internal_ea8e0de5191b2baada84ec4a2acabe3b03b7a7b6121aad6183f593b02fe2a703->leave($__internal_ea8e0de5191b2baada84ec4a2acabe3b03b7a7b6121aad6183f593b02fe2a703_prof);
 
     }
 
@@ -163,7 +170,7 @@ html body form .btn-primary:hover{
 
     public function getDebugInfo()
     {
-        return array (  139 => 79,  134 => 77,  127 => 73,  122 => 71,  118 => 70,  113 => 68,  109 => 67,  48 => 8,  42 => 6,  40 => 5,  34 => 4,  11 => 1,);
+        return array (  144 => 84,  138 => 81,  130 => 76,  124 => 73,  120 => 72,  115 => 70,  110 => 68,  48 => 8,  42 => 6,  40 => 5,  34 => 4,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -200,7 +207,8 @@ html body form .btn-primary:hover{
 /* }*/
 /* .wrapper h3{*/
 /*     font-weight: bold;*/
-/*     font-family: "arial black",;*/
+/*     font-family: "arial black";*/
+/*     color:#337ab7;*/
 /* }*/
 /* html body form .btn-primary{*/
 /*     background-color: red;*/
@@ -233,18 +241,24 @@ html body form .btn-primary:hover{
 /* <div class="wrapper">*/
 /* <h3 class="text-center">Connexion</h3>*/
 /* <form action="{{ path("fos_user_security_check") }}" method="post">*/
-/*     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
-/* */
+/* <div class="form-group">*/
+/*     <input class="form-control" type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
+/*     <div class="form-group">*/
 /*     <label for="username">{{ 'security.login.username'|trans }}</label>*/
-/*     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />*/
-/* */
+/*     <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />*/
+/*     </div>*/
+/*     <div class="form-group">*/
 /*     <label for="password">{{ 'security.login.password'|trans }}</label>*/
-/*     <input type="password" id="password" name="_password" required="required" />*/
-/* */
+/*     <input class="form-control" type="password" id="password" name="_password" required="required" />*/
+/*     </div>*/
+/*     <div class="form-group">*/
 /*     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />*/
 /*     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>*/
-/* */
-/*     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />*/
+/*     </div>*/
+/*     <div class="form-group">*/
+/*     <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />*/
+/*     </div>*/
+/*     </div>*/
 /* </form>*/
 /* </div>*/
 /* </div>*/

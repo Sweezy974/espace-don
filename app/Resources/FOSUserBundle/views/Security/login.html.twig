@@ -32,7 +32,8 @@
 }
 .wrapper h3{
     font-weight: bold;
-    font-family: "arial black",;
+    font-family: "arial black";
+    color:#337ab7;
 }
 html body form .btn-primary{
     background-color: red;
@@ -65,18 +66,24 @@ html body form .btn-primary:hover{
 <div class="wrapper">
 <h3 class="text-center">Connexion</h3>
 <form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
+<div class="form-group">
+    <input class="form-control" type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <div class="form-group">
     <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-
+    <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </div>
+    <div class="form-group">
     <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
-
+    <input class="form-control" type="password" id="password" name="_password" required="required" />
+    </div>
+    <div class="form-group">
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    </div>
+    <div class="form-group">
+    <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    </div>
+    </div>
 </form>
 </div>
 </div>

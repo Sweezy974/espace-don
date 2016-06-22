@@ -12,6 +12,8 @@
     </head>
     <style>
 
+    body{background: url(http://www.magic4walls.com/wp-content/uploads/2013/11/Love-Tree.jpg);background-repeat: no-repeat;background-size: cover;}
+
     .navbar{background-color: black;}
     .navbar-default{border-radius: 0px; border-color: transparent;}
     .navbar-default .navbar-nav>li>a:hover {color: white;background-color: #337ab7;}
@@ -19,10 +21,23 @@
     color: #fff;
 }
     body{background-color: blue;}
+    img{width : 50px ; height : auto;}
 
+    .navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #337ab7;
+}
     </style>
     <body>
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default col-md-12">
 <div class="container-fluid">
   <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -32,8 +47,17 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand " href="#" style="background-color:#337ab7;color:white;"><i class="fa fa-hand-spock-o"></i>ESPAce-DONS</a>
+    <div class="row">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img class="img-responsive" alt="Brand" src="{{asset('espace-don.png')}}">
+      </a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">ESPAce DON <3 <span class="sr-only">(current)</span></a></li>
+    </ul>
+    </div>
+  </div>
 <!-- Brand and toggle get grouped for better mobile display -->
 
 
