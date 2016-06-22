@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Connexion</title>
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-3">
+                    <div class="wrapper">
+                        <h3 class="text-center">Connexion</h3>
+                        <form action="form" data-toggle="validator">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Adresse e-mail</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Votre adresse e-mail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Mot de passe</label>
+                                <input type="password" class="form-control" pattern="^[_A-z0-9]{1,}$" id="exampleInputPassword1" placeholder="Votre mot de passe" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Connexion</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="no-compte text-center"><em>Vous n'avez pas de compte ? </em><a href="espaceSelection/selection.html"><em>Créer un compte</em></a> • <a href=""><em>Mot de passe oublié ?.</em></a></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
