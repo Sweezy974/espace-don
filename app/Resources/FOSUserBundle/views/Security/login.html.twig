@@ -5,61 +5,7 @@
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-<style>html body{
-    background-color: #333;
 
-}
-.wrapper{
-    margin-top: 170px;
-
-    background-color: #fff;
-    padding: 15px 50px 25px;
-    width: 60%;
-    height: 300px;
-    border-radius: 5px;
-    border-top: 6px solid #CE2347;
-
-    font-weight: bold;
-    font-family: "arial black",;
-    /*Animation fenetre*/
-    transition: all .3s ease-in;
-}
-.wrapper:hover{
-    /*Animation formulaire*/
-    transition: all .9s ease-in-out;
-    border: 2px solid dodgerblue;
-    border-top: 6px solid dodgerblue;
-}
-.wrapper h3{
-    font-weight: bold;
-    font-family: "arial black";
-    color:#337ab7;
-}
-html body form .btn-primary{
-    background-color: red;
-    border-color: red;
-}
-body form label{
-    margin-bottom: 10px;
-}
-html body form .btn-primary:hover{
-    /*background-color:darkslategray;*/
-    background-color:dodgerblue;
-}
-.no-compte{
-    color: white;
-    text-decoration: none;
-    padding-top: 15px;
-}
-.no-compte>a{
-    text-decoration: none;
-    color: white;
-}
-.no-compte a:hover{
-    text-decoration:underline;
-    color: white;
-    border-bottom: 1px solid #FF0000;
-}</style>
 <div class="container">
 <div class="row">
 <div class="col-md-10 col-md-offset-3">
