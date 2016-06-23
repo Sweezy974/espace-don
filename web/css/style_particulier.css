@@ -1,0 +1,88 @@
+html body{
+    background-image: url(../img/wp.jpg);
+    background-size: cover;
+}
+/*BARRE DE NAVIGATION*/
+body .navbar-default{
+    background-color:darkcyan;
+    border-color: darkslategrey;
+    border-radius: 0;
+}
+body .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+    margin: 0;
+}
+body .navbar-default .navbar-brand{
+    color: white;
+}
+body .navbar-default .navbar-nav>li>a{
+    color: white;
+}
+body .navbar-default .navbar-nav>li>a:hover{
+    background-color:crimson;
+    color: white;
+}
+body .navbar-default a.navbar-brand:hover{
+    color: white;
+    background-color: crimson;
+}
+/* FIN BARRE DE NAVIGATION*/
+.wrapper{
+    margin-top: 50px;
+    background-color: #fff;
+    height: 475px;
+    border-radius: 5px;
+    padding: 15px 50px 25px;
+    border-top: 6px solid #CE2347;
+    
+    font-weight: bold;
+    font-family: "arial black",; 
+    /*Animation fenetre*/
+    transition: all .3s ease-in;
+} 
+.wrapper:hover{
+    /*Animation formulaire*/
+    transition: all .9s ease-in-out;
+    
+    border-top: 6px solid dodgerblue;
+}
+.wrapper h3{
+    font-weight: bold;
+    font-family: "arial black",;
+}
+html body form .btn-primary{
+    background-color: crimson;
+    border-color: white;
+}
+body form label{
+    margin-bottom: 10px;
+}
+html body form .btn-primary:hover{
+    /*background-color:darkslategray;*/
+    background-color:darkcyan;
+}
+.no-compte{
+    color: white;
+    text-decoration: none;
+    padding-top: 15px;
+}
+.no-compte>a{
+    text-decoration: none;
+    color: white;
+}
+.no-compte a:hover{
+    text-decoration:underline;
+    color: white;
+    border-bottom: 1px solid #FF0000;
+}
+.btn-primary a:hover{
+    text-decoration: none;
+    color: white;
+}
+.btn-primary a{
+    text-decoration: none;
+    color: white;
+}
+.oblig{
+    font-size: 10px;
+}
+

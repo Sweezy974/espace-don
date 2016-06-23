@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+        <!--<link rel="stylesheet" href="{{asset('css/styles.css')}}">-->
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         {% endblock %}
 
@@ -12,15 +12,17 @@
     </head>
     <style>
 
-    body{background: url(http://www.magic4walls.com/wp-content/uploads/2013/11/Love-Tree.jpg);background-repeat: no-repeat;background-size: cover;}
+    body{background-image: url(https://pixabay.com/static/uploads/photo/2016/05/28/00/06/gift-1420830_960_720.jpg);background-repeat: no-repeat;background-size: cover;}
 
-    .navbar{background-color: black;}
-    .navbar-default{border-radius: 0px; border-color: transparent;}
-    .navbar-default .navbar-nav>li>a:hover {color: white;background-color: #337ab7;}
+    .navbar-brand>img {display: block;background-color: crimson;}
+
+    .navbar{background-color: darkcyan;}
+    .navbar-default{border-radius: 0px; border-color: crimson;}
+    .navbar-default .navbar-nav>li>a:hover {color: white;background-color: crimson;}
     .navbar-default .navbar-nav>li>a {
     color: #fff;
 }
-    body{background-color: blue;}
+    body{}
     img{width : 50px ; height : auto;}
 
     .navbar-brand {
@@ -33,7 +35,7 @@
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #fff;
-    background-color: #337ab7;
+    background-color: crimson;
 }
 
 body .btn-primary, btn1 {
@@ -44,16 +46,18 @@ body .btn-primary, btn1 {
     border-color: red;
 }
 
-.wrapper{background-color: #5791c1;}
+.wrapper {
+    background-color: #008b8b;
+}
 .wrapper h3 {
     font-weight: bold;
     font-family: "arial black",;
     color: white;
-   padding-top: 0px; 
+   padding-top: 0px;
 }
     </style>
     <body>
-      <nav class="navbar navbar-default col-md-12">
+      <nav class="navbar navbar-default navbar-fixed-top col-md-12">
 <div class="container-fluid">
   <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

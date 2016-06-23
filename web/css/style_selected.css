@@ -1,0 +1,75 @@
+html body{
+    background-image: url(../img/wp.jpg);
+    background-size: cover;
+}
+.midlle{
+    padding-top: 20vh;
+
+}
+body  .btn-primary,btn1{
+    padding-bottom: 10px;
+    margin-left: 30px;
+    margin-top: 6vh;
+    background-color: crimson;
+    border-color: white;
+
+}
+body .btn-primary>a{
+    text-decoration: none;
+    color: white;
+}
+body .btn-primarye a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.wrapper{
+    margin-top: 100px;
+    margin-top: 100px;
+    height: 350px;
+    border-radius: 5px;
+    padding: 15px 50px 25px;
+    border-top: 6px solid red;
+    border: 2px solid red;
+    font-weight: bold;
+    font-family: "arial black",; 
+    /*Animation fenetre*/
+    transition: all .3s ease-in;
+    
+ 
+}
+.wrapper h3{
+    font-weight: bold;
+    font-family: "arial black",;
+    color: white;
+    padding-top: 5vh;
+    
+
+
+}
+.wrapper:hover{
+    /*Animation formulaire*/
+    transition: all .9s ease-in-out;
+    border: 2px solid dodgerblue;
+    border-top: 6px solid dodgerblue;
+}
+.btn-primary:hover{
+    /*background-color:darkslategray;*/
+    background-color: darkcyan;
+    border-color: white;
+}
+.no-compte{
+    color: white;
+    text-decoration: none;
+    padding-top: 15px;
+}
+.no-compte>a{
+    text-decoration: none;
+    color: white;
+}
+.no-compte a:hover{
+    text-decoration:underline;
+    color: white;
+    border-bottom: 1px solid #FF0000;
+}
