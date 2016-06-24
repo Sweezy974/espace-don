@@ -109,6 +109,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'donation_homepage',);
         }
 
+        if (0 === strpos($pathinfo, '/register')) {
+            // donation_association_register
+            if ($pathinfo === '/register/association') {
+                return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::registerAssociationAction',  '_route' => 'donation_association_register',);
+            }
+
+            // donation_particulier_register
+            if ($pathinfo === '/register/particulier') {
+                return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::registerParticulierAction',  '_route' => 'donation_particulier_register',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -199,7 +212,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                         return $this->redirect($pathinfo.'/', 'fos_user_registration_register');
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                    return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
                 not_fos_user_registration_register:
 
@@ -211,7 +224,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                             goto not_fos_user_registration_check_email;
                         }
 
-                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
+                        return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
                     }
                     not_fos_user_registration_check_email:
 
@@ -223,7 +236,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                                 goto not_fos_user_registration_confirm;
                             }
 
-                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::confirmAction',));
                         }
                         not_fos_user_registration_confirm:
 
@@ -234,7 +247,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                                 goto not_fos_user_registration_confirmed;
                             }
 
-                            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
+                            return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
                         }
                         not_fos_user_registration_confirmed:
 

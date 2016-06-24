@@ -37,6 +37,11 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Donation\DonationBundle\Entity\Utilisateurs
+    registration:
+        form:
+            type: Donation\DonationBundle\Form\RegistrationUsersType
+            type: Donation\DonationBundle\Form\RegistrationAssociationType
+
 
 # Twig Configuration
 twig:

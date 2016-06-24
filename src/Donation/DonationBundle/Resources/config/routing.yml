@@ -1,3 +1,11 @@
 donation_homepage:
     path:     /
     defaults: { _controller: DonationBundle:Default:index }
+    
+donation_association_register:
+    path:     /register/association
+    defaults: { _controller: DonationBundle:Registration:registerAssociation }
+    
+donation_particulier_register:
+    path:     /register/particulier
+    defaults: { _controller: DonationBundle:Registration:registerParticulier }

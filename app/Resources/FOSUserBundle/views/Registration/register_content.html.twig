@@ -3,8 +3,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
     {% block body %}
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-
+{{ form_start(form, {'method': 'post',  'attr': {'class': 'fos_user_registration_register'}}) }}
 
 
     <div class="container">
@@ -18,7 +17,7 @@
                       <div class="col-md-6">
                           <div class="form-group">
 
-                              <div><label for="fos_user_registration_form_email" class="required">Adresse e-mail</label><input placeholder="adresse e-mail" class="form-control" type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" required="required"></div>
+                              <div><label for="app_user_registration_email" class="required">Adresse e-mail</label><input placeholder="adresse e-mail" class="form-control" type="email" id="app_user_registration_email" name="app_user_registration[email]" required="required"></div>
 
                           </div>
                       </div>
@@ -26,7 +25,7 @@
                           <div class="col-md-6">
                               <div class="form-group">
 
-                                  <div><label for="fos_user_registration_form_username" class="required">Nom d'utilisateur</label><input placeholder="Pseudo" class="form-control" type="text" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="255" pattern=".{2,}"></div>
+                                  <div><label for="app_user_registration_username" class="required">Nom d'utilisateur</label><input placeholder="Pseudo" class="form-control" type="text" id="app_user_registration_username" name="app_user_registration[username]" required="required" maxlength="255" pattern=".{2,}"></div>
                               </div>
                           </div>
 
@@ -35,13 +34,13 @@
 
                           <div class="col-md-6">
                               <div class="form-group">
-                                  <div><label for="fos_user_registration_form_plainPassword_first" class="required">Mot de passe</label><input placeholder="mot de passe" class="form-control" type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required"></div>
+                                  <div><label for="app_user_registration_plainPassword_first" class="required">Mot de passe</label><input placeholder="mot de passe" class="form-control" type="password" id="app_user_registration_plainPassword_first" name="app_user_registration[plainPassword][first]" required="required"></div>
                               </div>
                           </div>
 
                              <div class="col-md-6">
                               <div class="form-group">
-                                   <div><label for="fos_user_registration_form_plainPassword_second" class="required">Vérification</label><input placeholder="confirmez votre mot de passe" class="form-control" type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required"></div>
+                                   <div><label for="app_user_registration_plainPassword_second" class="required">Vérification</label><input placeholder="confirmez votre mot de passe" class="form-control" type="password" id="app_user_registration_plainPassword_second" name="app_user_registration[plainPassword][second]" required="required"></div>
                               </div>
                           </div>
 

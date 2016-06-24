@@ -104,10 +104,23 @@ body .btn-primary, btn1 {
                    {{ 'Se deconnecter'|trans({}, 'FOSUserBundle') }}
                </a>
            {% else %}
+<!--
                <a class="nav-link"
                   href="{{ path('fos_user_registration_register') }}">{{ 'Inscription'|trans({}, 'FOSUserBundle') }}</a>
+-->
+                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-edit" aria-hidden="true"></i> Inscription<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/register/association"><i class="fa fa-group" aria-hidden="true"></i>  Association</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="/register/particulier"><i class="fa fa-user" aria-hidden="true"></i>  Particulier</a></li>
+                    </ul>
+                  </li>
            {% endif %}
        </li>
+       
+       
+
 
 </ul>
 </div><!-- /.navbar-collapse -->
@@ -120,6 +133,9 @@ body .btn-primary, btn1 {
         {% block javascripts %}
         <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="{{asset('js/script.js')}}"></script>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        
         {% endblock %}
     </body>
 </html>
