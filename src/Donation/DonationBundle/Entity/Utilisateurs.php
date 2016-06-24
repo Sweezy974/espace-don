@@ -51,6 +51,19 @@ class Utilisateurs extends BaseUser
      */
     private $phone;
     
+/**
+  * @ORM\OneToMany(targetEntity="Dons", mappedBy="utilisateur")
+  * @ORM\JoinColumn(name="dons_id", referencedColumnName="id")
+  */
+  private $don;
+
+  
+/**
+  * dons demandés par l'association.
+  * @ORM\ManyToMany(targetEntity="Dons", mappedBy="donAssociation")
+  */
+  protected $donDemandeAssociation;
+    
 
     public function __construct()
     {
@@ -176,5 +189,73 @@ class Utilisateurs extends BaseUser
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * Add don
+     *
+     * @param \Donation\DonationBundle\Entity\Dons $don
+     *
+     * @return Utilisateurs
+     */
+    public function addDon(\Donation\DonationBundle\Entity\Dons $don)
+    {
+        $this->don[] = $don;
+
+        return $this;
+    }
+
+    /**
+     * Remove don
+     *
+     * @param \Donation\DonationBundle\Entity\Dons $don
+     */
+    public function removeDon(\Donation\DonationBundle\Entity\Dons $don)
+    {
+        $this->don->removeElement($don);
+    }
+
+    /**
+     * Get don
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDon()
+    {
+        return $this->don;
+    }
+
+    /**
+     * Add donDemandeAssociation
+     *
+     * @param \Donation\DonationBundle\Entity\Dons $donDemandeAssociation
+     *
+     * @return Utilisateurs
+     */
+    public function addDonDemandeAssociation(\Donation\DonationBundle\Entity\Dons $donDemandeAssociation)
+    {
+        $this->donDemandeAssociation[] = $donDemandeAssociation;
+
+        return $this;
+    }
+
+    /**
+     * Remove donDemandeAssociation
+     *
+     * @param \Donation\DonationBundle\Entity\Dons $donDemandeAssociation
+     */
+    public function removeDonDemandeAssociation(\Donation\DonationBundle\Entity\Dons $donDemandeAssociation)
+    {
+        $this->donDemandeAssociation->removeElement($donDemandeAssociation);
+    }
+
+    /**
+     * Get donDemandeAssociation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDonDemandeAssociation()
+    {
+        return $this->donDemandeAssociation;
     }
 }

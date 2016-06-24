@@ -51,6 +51,19 @@ class Utilisateurs extends BaseUser
      */
     private $phone;
     
+/**
+  * @ORM\OneToMany(targetEntity="Dons", mappedBy="utilisateur")
+  * @ORM\JoinColumn(name="dons_id", referencedColumnName="id")
+  */
+  private $don;
+
+  
+/**
+  * dons demandés par l'association.
+  * @ORM\ManyToMany(targetEntity="Dons", mappedBy="donAssociation")
+  */
+  protected $donDemandeAssociation;
+    
 
     public function __construct()
     {

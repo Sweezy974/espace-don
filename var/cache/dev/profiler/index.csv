@@ -86,3 +86,9 @@ cc66f2,127.0.0.1,POST,http://localhost:8000/login_check,1466763953,,302
 3f16fe,127.0.0.1,GET,http://localhost:8000/,1466763954,,200
 62bd38,127.0.0.1,GET,http://localhost:8000/js/script.js,1466763955,be4bdd,200
 be4bdd,127.0.0.1,GET,http://localhost:8000/js/script.js,1466763955,,404
+27ca2c,127.0.0.1,GET,http://localhost:8000/,1466767022,,200
+d1001e,127.0.0.1,GET,http://localhost:8000/js/script.js,1466767024,f5ec33,200
+f5ec33,127.0.0.1,GET,http://localhost:8000/js/script.js,1466767024,,404
+276bf0,127.0.0.1,GET,http://localhost:8000/profile/edit,1466767030,,200
+5bbaa7,127.0.0.1,POST,http://localhost:8000/profile/edit,1466767050,,302
+696dcd,127.0.0.1,GET,http://localhost:8000/profile/,1466767051,,200
