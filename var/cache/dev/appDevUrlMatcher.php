@@ -100,6 +100,68 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/dons')) {
+            // dons_index
+            if (rtrim($pathinfo, '/') === '/dons') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_dons_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'dons_index');
+                }
+
+                return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::indexAction',  '_route' => 'dons_index',);
+            }
+            not_dons_index:
+
+            // dons_show
+            if (preg_match('#^/dons/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_dons_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dons_show')), array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::showAction',));
+            }
+            not_dons_show:
+
+            // dons_new
+            if ($pathinfo === '/dons/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_dons_new;
+                }
+
+                return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::newAction',  '_route' => 'dons_new',);
+            }
+            not_dons_new:
+
+            // dons_edit
+            if (preg_match('#^/dons/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_dons_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dons_edit')), array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::editAction',));
+            }
+            not_dons_edit:
+
+            // dons_delete
+            if (preg_match('#^/dons/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_dons_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'dons_delete')), array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::deleteAction',));
+            }
+            not_dons_delete:
+
+        }
+
         // donation_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
