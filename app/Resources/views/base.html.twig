@@ -14,11 +14,11 @@
 
     body{background-image: url(https://pixabay.com/static/uploads/photo/2016/05/28/00/06/gift-1420830_960_720.jpg);background-repeat: no-repeat;background-size: cover;}
 
-    .navbar-brand>img {display: block;background-color: crimson;}
+    .navbar-brand>img {display: block;}
 
     .navbar{background-color: darkcyan;}
-    .navbar-default{border-radius: 0px; border-color: crimson;}
-    .navbar-default .navbar-nav>li>a:hover {color: white;background-color: crimson;}
+    .navbar-default{border-radius: 0px; border-color: darkcyan;}
+    .navbar-default .navbar-nav>li>a:hover {color: white;}
     .navbar-default .navbar-nav>li>a {
     color: #fff;
 }
@@ -35,7 +35,7 @@
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #fff;
-    background-color: crimson;
+    background-color:transparent; ;
 }
 
 body .btn-primary, btn1 {
@@ -54,6 +54,7 @@ body .btn-primary, btn1 {
     font-family: "arial black",;
     color: white;
    padding-top: 0px;
+   transition: all .3s ease-in;
 }
     </style>
     <body>
@@ -118,8 +119,8 @@ body .btn-primary, btn1 {
                   </li>
            {% endif %}
        </li>
-       
-       
+
+
 
 
 </ul>
@@ -135,7 +136,7 @@ body .btn-primary, btn1 {
         <script src="{{asset('js/script.js')}}"></script>
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        
+
         {% endblock %}
     </body>
 </html>

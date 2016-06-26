@@ -8,13 +8,13 @@ use FOS\UserBundle\Form\Type\RegistrationFormType;
 
 
 class RegistrationAssociationType extends RegistrationFormType {
-    
-    
+
+
     public function buildForm(FormBuilderInterface $builder, array $options){
-        
+
         $builder
                 ->add('associationname', null, [
-                    "label" => "Association"
+                    "label" => "Nom Association"
                 ])
                 ->add('adress', null, [
                     "label" => "Adresse"
@@ -24,20 +24,20 @@ class RegistrationAssociationType extends RegistrationFormType {
                 ])
         ;
     }
-        
-        
-        
+
+
+
     public function getParent(){
         return 'FOS\UserBundle\Form\Type\RegistrationFormType';
     }
-    
+
      public function getBlockPrefix(){
         return 'app_user_registration';
     }
-    
+
     public function getName(){
         return 'donation_association_registration';
-        
+
     }
-    
+
 }

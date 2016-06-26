@@ -1,5 +1,108 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "base.html.twig" %}
+{% block body %}
 
-{% block fos_user_content %}
-{% include "FOSUserBundle:Registration:register_content.html.twig" %}
-{% endblock fos_user_content %}
+
+
+
+
+
+<style>
+
+.wrapper{
+margin-top: 100px;
+height: 300px;
+border-radius: 5px;
+padding: 15px 50px 25px;
+border-top: 6px solid #CE2347;
+
+font-weight: bold;
+font-family: "arial black",;
+/*Animation fenetre*/
+transition: all .3s ease-in;
+}
+.wrapper:hover{
+/*Animation formulaire*/
+transition: all .9s ease-in-out;
+
+border-top: 6px solid dodgerblue;
+}
+.wrapper h3{
+font-weight: bold;
+font-family: "arial black",;
+}
+html body form .btn-primary{
+background-color: crimson;
+border-color: white;
+}
+body form label{
+margin-bottom: 10px;
+}
+html body form .btn-primary:hover{
+/*background-color:darkslategray;*/
+background-color:darkcyan;
+}
+.no-compte{
+color: white;
+text-decoration: none;
+padding-top: 15px;
+}
+.no-compte>a{
+text-decoration: none;
+color: white;
+}
+.no-compte a:hover{
+text-decoration:underline;
+color: white;
+border-bottom: 1px solid #FF0000;
+}
+.btn-primary a:hover{
+text-decoration: none;
+color: white;
+}
+.btn-primary a{
+text-decoration: none;
+color: white;
+}
+.oblig{
+font-size: 10px;
+}
+
+.btn{
+  margin-top: 50px;
+}
+
+
+
+</style>
+<div class="container">
+        <div class="row">
+            <div class="col-md-7 col-md-offset-3">
+              <div class="wrapper text-center">
+                  <h3 class="text-center">Inscription Association</h3>
+                  <div class="col-md-6">
+                    <a href="/register/association"><i class="fa fa-group" aria-hidden="true"></i>
+                      <input type="submit" class="btn " value="Association">
+                    </a>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="/register/particulier"><i class="fa fa-group" aria-hidden="true"></i>
+                      <input type="submit" class="btn " value="Particulier">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

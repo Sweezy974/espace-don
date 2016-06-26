@@ -80,11 +80,11 @@ class RegistrationController extends baseController
             return $response;
         }
 
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:register_content.html.twig', array(
             'form' => $form->createView(),
         ));
     }
-    
+
     public function registerParticulierAction(Request $request)
     {
         /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
@@ -126,10 +126,10 @@ class RegistrationController extends baseController
             return $response;
         }
 
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:register_content.html.twig', array(
             'form' => $form->createView(),
         ));
     }
 
-    
+
 }
