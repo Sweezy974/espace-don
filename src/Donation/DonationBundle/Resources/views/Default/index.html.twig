@@ -107,10 +107,10 @@ a{
     <h1>ESPAce DON ! </h1>
     <p>ESPAce DON propose un service de don d'objet gratuit entre particuliers. Vous pouvez déposer en ligne une annonce 100% gratuite pour un objet à donner et ainsi vous débarrasser rapidement de vos objets et affaires inutiles.
 Pour l'association intéressé par votre don, c’est un moyen simple et facile de faire de la récup gratuitement.</p>
-
-    <p><a class="btn btn-primary" href="{{ path('fos_user_registration_register') }}" role="button">Inscription </a></p>
-    <p style="color:black;">Déjà inscrit ?<a class="" href="{{ path('fos_user_security_login') }}" role="button">Connectez-vous </a></p>
-
+    {% if not is_granted('ROLE_PARTICULIER') and not is_granted('ROLE_ASSOCIATION') %}
+    <p><a class="btn btn-danger" href="{{ path('fos_user_registration_register') }}" role="button">Inscription </a></p>
+    <p style="color:black;">Déjà inscrit ?<a class="" href="{{ path('fos_user_security_login') }}" role="button"> Connectez-vous </a></p>
+    {% endif %}
   </div>
       </div>
 

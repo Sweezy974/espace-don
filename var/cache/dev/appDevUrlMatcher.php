@@ -127,6 +127,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_dons_show:
 
+            // dons_mine
+            if ($pathinfo === '/dons/mesdons') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_dons_mine;
+                }
+
+                return array (  '_controller' => 'Donation\\DonationBundle\\Controller\\DonsController::mineAction',  '_route' => 'dons_mine',);
+            }
+            not_dons_mine:
+
             // dons_new
             if ($pathinfo === '/dons/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {

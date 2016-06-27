@@ -76,15 +76,18 @@ h4{
     <div class="container">
     <div class="row">
       <div class="wrapper text-center">
-        <h3>Mise à jour réussi ! </h3>
+        <h3>Profil </h3>
           <h4 class="text-center ">
           {{ 'profile.show.username'|trans }}: {{ user.username }}
         </h4>
           <h4 class="text-center ">
           {{ 'profile.show.email'|trans }}: {{ user.email }}
         </h4>
+        <h4 class="text-center ">
+          {{ 'profile.show.phone'|trans }}: {{ user.phone }}
+        </h4>
+    <a href="/profile/edit" class="btn btn-danger">Modifier le profil</a>
         </div>
-
 
 
 

@@ -24,16 +24,33 @@ class DonsController extends Controller
 
         $dons = $em->getRepository('DonationBundle:Dons')->findAll();
 
-        $utilisateur = $this->getUser();
-    if(in_array('ROLE_ASSOCIATION', $utilisateur->getRoles())){
-      return $this->render('dons/indexAssociation.html.twig', array(
+      
+      return $this->render('dons/index.html.twig', array(
         'dons' => $dons,
       ));
-    }else if(in_array('ROLE_PARTICULIER', $utilisateur->getRoles())){
-      return $this->render('dons/indexParticulier.html.twig', array(
-        'dons' => $dons,
-      ));
+    
     }
+    
+    
+    //List my donations
+     public function mineAction()
+    {
+        $user = $this->getUser();
+        $userId = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+       
+
+        $dons = $em->getRepository('DonationBundle:Dons')->findBy(array('utilisateur' => $userId));
+
+      
+      return $this->render('dons/mesdons.html.twig', array(
+        'mesdons' => $dons,
+      ));
+         
+         
+         
+      
+    
     }
 
     /**
@@ -45,13 +62,17 @@ class DonsController extends Controller
         $don = new Dons();
         $form = $this->createForm('Donation\DonationBundle\Form\DonsType', $don);
         $form->handleRequest($request);
+        
+        $userId = $this->getUser();
+        $userId->getId();
+        $don->setUtilisateur($userId);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($don);
             $em->flush();
 
-            return $this->redirectToRoute('dons_show', array('id' => $don->getId()));
+            return $this->redirectToRoute('dons_index');
         }
 
         return $this->render('dons/new.html.twig', array(
@@ -59,6 +80,9 @@ class DonsController extends Controller
             'form' => $form->createView(),
         ));
     }
+    
+
+    
 
     /**
      * Finds and displays a Dons entity.

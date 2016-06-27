@@ -7,6 +7,11 @@ dons_show:
     path:     /{id}/show
     defaults: { _controller: "DonationBundle:Dons:show" }
     methods:  GET
+    
+dons_mine:
+    path:     /mesdons
+    defaults: { _controller: "DonationBundle:Dons:mine" }
+    methods:  GET
 
 dons_new:
     path:     /new
