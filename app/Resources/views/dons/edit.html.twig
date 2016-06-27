@@ -4,8 +4,36 @@
     <h1>Dons edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
+     <div class="container text-center">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="wrapper">
+                <h3 class="text-center">Modifier le don</h3>
+    
+        <div class="form-group">
+          {{ form_label(edit_form.name) }}
+          {{ form_widget(edit_form.name, {'attr': {'class':'form-control'}}) }}
+          {{ form_errors(edit_form.name) }}
+        </div>
+
+        <div class="form-group">
+          {{ form_label(edit_form.description) }}
+          {{ form_widget(edit_form.description, {'attr': {'class':'form-control'}}) }}
+          {{ form_errors(edit_form.description) }}
+        </div>
+
+        <div class="form-group">
+          {{ form_label(edit_form.category) }}
+          {{ form_widget(edit_form.category, {'attr': {'class':'form-control'}}) }}
+          {{ form_errors(edit_form.category) }}
+        </div>
+       
+       
         <input type="submit" value="Edit" />
+          </div>
+        </div>
+    </div>
+</div>
     {{ form_end(edit_form) }}
 
     <ul>
@@ -14,7 +42,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>

@@ -80,7 +80,7 @@ class RegistrationController extends baseController
             return $response;
         }
 
-        return $this->render('FOSUserBundle:Registration:register_content.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:registerAssociation_content.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -126,7 +126,7 @@ class RegistrationController extends baseController
             return $response;
         }
 
-        return $this->render('FOSUserBundle:Registration:register_content.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:registerParticulier_content.html.twig', array(
             'form' => $form->createView(),
         ));
     }

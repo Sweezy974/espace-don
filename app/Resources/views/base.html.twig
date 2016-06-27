@@ -75,7 +75,7 @@ body .btn-primary, btn1 {
       </a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">ESPAce DON <3 <span class="sr-only">(current)</span></a></li>
+      <li class="active"><a href="/">ESPAce DON <3 <span class="sr-only">(current)</span></a></li>
     </ul>
     </div>
   </div>
@@ -84,47 +84,56 @@ body .btn-primary, btn1 {
 
 
 <!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
 
+          {% if is_granted('ROLE_PARTICULIER') %}
+          <li><a href="/dons/new"><i class="fa fa-edit" aria-hidden="true"></i> Faire un don</a></li>
+          <!-- <li><a href="/notification"><i class="fa fa-bell" aria-hidden="true"></i>NOTIFICATION</a></li> -->
+          {% endif %}
+          
+          {% if is_granted('ROLE_PARTICULIER') or is_granted('ROLE_ASSOCIATION') %}
+          <li><a href="/dons"><i class="fa fa-edit" aria-hidden="true"></i> Liste des dons</a></li>
+          {% endif %}
+          
+          {% if is_granted('ROLE_PARTICULIER') %}
+          <li><a href="/dons/mesdons"><i class="fa fa-edit" aria-hidden="true"></i> Mes dons</a></li>
+          {% endif %}
+          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+          <li>
+            <a href="/profile" title="Profil"><i class="fa fa-user" aria-hidden="true"></i> {{ app.user.username }}</a>
+          </li>
 
-<ul class="nav navbar-nav navbar-right" >
-  <li class="nav-item">
-           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-               <a class="nav-link" href="{{ path('fos_user_profile_edit') }}">
-                   Connecté en tant que: {{ app.user.username }}</a>
+          
+          {% else %}
 
-           {% else %}
-               <a class="nav-link"
-                  href="{{ path('fos_user_security_login') }}">{{ 'Connexion'|trans({}, 'FOSUserBundle') }}</a>
-           {% endif %}
-       </li>
-       <li class="nav-item">
-           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-               <a class="nav-link"
-                  href="{{ path('fos_user_security_logout') }}">
-                   {{ 'Se deconnecter'|trans({}, 'FOSUserBundle') }}
-               </a>
-           {% else %}
-<!--
-               <a class="nav-link"
-                  href="{{ path('fos_user_registration_register') }}">{{ 'Inscription'|trans({}, 'FOSUserBundle') }}</a>
--->
-                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-edit" aria-hidden="true"></i> Inscription<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="/register/association"><i class="fa fa-group" aria-hidden="true"></i>  Association</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="/register/particulier"><i class="fa fa-user" aria-hidden="true"></i>  Particulier</a></li>
-                    </ul>
-                  </li>
-           {% endif %}
-       </li>
+          <li>
+            <a href="{{ path('fos_user_security_login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+          </li>
+          {% endif %}
 
+          <li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_security_logout') }}">Se déconnecter <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+            {% else %}
 
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-edit" aria-hidden="true"></i> Inscription<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/register/association"><i class="fa fa-group" aria-hidden="true"></i> Association</a></li>
+                <li><a href="/register/particulier"><i class="fa fa-user" aria-hidden="true"></i> Particulier</a></li>
+              </ul>
+            </li>
+            {% endif %}
 
-
-</ul>
-</div><!-- /.navbar-collapse -->
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
 

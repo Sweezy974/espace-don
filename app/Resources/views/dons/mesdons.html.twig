@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+
+    <div class="container text-center">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="wrapper">
+                <h2 style="color:white; "class="text-center">Liste de mes dons</h2>
+    
+        {% for don in mesdons %}
+           
+           
+           
+                
+            <div class="row">
+            <div class="col-md-12">
+              <h4 style="color:white;">{{ don.name}} - {{ don.category }}</h4>
+              <p style="color:white;">{{ don.description }}</p>
+             
+              <hr>
+            </div>
+          </div>
+                    
+           
+           
+           
+        {% endfor %}
+       
+            {%  if is_granted('ROLE_PARTICULIER') %}
+   
+            <a href="{{ path('dons_new') }}" class="btn btn-danger">Faire un don</a>
+            
+            {% endif %}
+      
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <style>
+/*CADRE WRAPPER*/
+.wrapper{
+    margin-top: 50px;
+   
+    border-radius: 5px;
+    background-color:darkcyan;
+    padding: 15px 50px 25px;
+/*    color: white;*/
+    border-top: 6px solid darkcyan;
+    /*animation fenetre*/
+    transition: all .3s ease-in;
+} 
+.wrapper:hover{
+    border-top: 6px solid CRIMSON;
+    /*Animation formulaire*/
+    transition: all .9s ease-in-out;
+}
+.wrapper h3{
+    font-weight: bold;
+    font-family: "arial black",;
+}
+html body form .btn-primary{
+    background-color: crimson;
+    border-color: white;
+    margin-top: 20px;
+}
+body form label{
+    margin-bottom: 10px;
+}
+
+.no-compte{
+    color: white;
+    text-decoration: none;
+    padding-top: 15px;
+}
+.no-compte>a{
+    text-decoration: none;
+    color: white;
+}
+.no-compte a:hover{
+    text-decoration:underline;
+    color: crimson;
+    border-bottom: 1px solid white;
+}
+.btn-primary{
+    margin-top: 20px;
+}
+html body form .btn-primary:hover{
+    border-color: white;
+    background-color: darkcyan;
+}
+.form-control{
+    border:2px solid white;
+}
+.form-control:hover{
+    border:1px solid red;
+}
+        textarea{
+            margin-bottom: 20px; 
+        }
+/*FIN CADRE WRAPPER */</style>
+{% endblock %}

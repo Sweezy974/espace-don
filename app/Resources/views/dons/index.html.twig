@@ -1,43 +1,107 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Dons list</h1>
+    
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container text-center">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="wrapper">
+                <h2 style="color:white; "class="text-center">Liste des dons</h2>
+    
         {% for don in dons %}
-            <tr>
-                <td><a href="{{ path('dons_show', { 'id': don.id }) }}">{{ don.id }}</a></td>
-                <td>{{ don.name }}</td>
-                <td>{{ don.description }}</td>
-                <td>{{ don.category }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('dons_show', { 'id': don.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('dons_edit', { 'id': don.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+           
+           
+           
+                
+            <div class="row">
+            <div class="col-md-12">
+              <h4 style="color:white;">{{ don.name}} - {{ don.category }}</h4>
+              <p style="color:white;">{{ don.description }}</p>
+              {% if is_granted('ROLE_ASSOCIATION')%}
+                <a href="#" class="btn btn-warning">Interessé !</a>
+              {% endif %}
+              <hr>
+            </div>
+          </div>
+                    
+           
+           
+           
         {% endfor %}
-        </tbody>
-    </table>
+       
+            {%  if is_granted('ROLE_PARTICULIER') %}
+   
+            <a href="{{ path('dons_new') }}" class="btn btn-danger">Faire un don</a>
+            
+            {% endif %}
+      
+            </div>
+        </div>
+    </div>
+</div>
 
-    <ul>
-        <li>
-            <a href="{{ path('dons_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    
+    <style>
+/*CADRE WRAPPER*/
+.wrapper{
+    margin-top: 50px;
+   
+    border-radius: 5px;
+    background-color:darkcyan;
+    padding: 15px 50px 25px;
+/*    color: white;*/
+    border-top: 6px solid darkcyan;
+    /*animation fenetre*/
+    transition: all .3s ease-in;
+} 
+.wrapper:hover{
+    border-top: 6px solid CRIMSON;
+    /*Animation formulaire*/
+    transition: all .9s ease-in-out;
+}
+.wrapper h3{
+    font-weight: bold;
+    font-family: "arial black",;
+}
+html body form .btn-primary{
+    background-color: crimson;
+    border-color: white;
+    margin-top: 20px;
+}
+body form label{
+    margin-bottom: 10px;
+}
+
+.no-compte{
+    color: white;
+    text-decoration: none;
+    padding-top: 15px;
+}
+.no-compte>a{
+    text-decoration: none;
+    color: white;
+}
+.no-compte a:hover{
+    text-decoration:underline;
+    color: crimson;
+    border-bottom: 1px solid white;
+}
+.btn-primary{
+    margin-top: 20px;
+}
+html body form .btn-primary:hover{
+    border-color: white;
+    background-color: darkcyan;
+}
+.form-control{
+    border:2px solid white;
+}
+.form-control:hover{
+    border:1px solid red;
+}
+        textarea{
+            margin-bottom: 20px; 
+        }
+/*FIN CADRE WRAPPER */</style>
 {% endblock %}

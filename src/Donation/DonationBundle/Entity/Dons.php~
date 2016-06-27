@@ -136,5 +136,69 @@ class Dons
     {
         return $this->category;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->donAssociation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Set utilisateur
+     *
+     * @param \Donation\DonationBundle\Entity\Utilisateurs $utilisateur
+     *
+     * @return Dons
+     */
+    public function setUtilisateur(\Donation\DonationBundle\Entity\Utilisateurs $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \Donation\DonationBundle\Entity\Utilisateurs
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * Add donAssociation
+     *
+     * @param \Donation\DonationBundle\Entity\Utilisateurs $donAssociation
+     *
+     * @return Dons
+     */
+    public function addDonAssociation(\Donation\DonationBundle\Entity\Utilisateurs $donAssociation)
+    {
+        $this->donAssociation[] = $donAssociation;
+
+        return $this;
+    }
+
+    /**
+     * Remove donAssociation
+     *
+     * @param \Donation\DonationBundle\Entity\Utilisateurs $donAssociation
+     */
+    public function removeDonAssociation(\Donation\DonationBundle\Entity\Utilisateurs $donAssociation)
+    {
+        $this->donAssociation->removeElement($donAssociation);
+    }
+
+    /**
+     * Get donAssociation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDonAssociation()
+    {
+        return $this->donAssociation;
+    }
+}
