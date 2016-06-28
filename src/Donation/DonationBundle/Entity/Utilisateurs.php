@@ -3,14 +3,14 @@
 
 namespace Donation\DonationBundle\Entity;
 
-//use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="Utilisateurs")
  */
-class Utilisateurs /*extends BaseUser*/
+class Utilisateurs extends BaseUser
 {
     /**
      * @ORM\Id
